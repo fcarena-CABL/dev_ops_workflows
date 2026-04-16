@@ -1,0 +1,14 @@
+name: hola-mundo-node
+on: push
+jobs: 
+  hola-mundo-node-jobs:
+    runs-on: ubuntu-20.04
+    steps: 
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Ejecutar index.js
+        run: node index.js
