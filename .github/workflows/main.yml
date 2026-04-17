@@ -17,3 +17,4 @@ jobs:
     steps:
       - name: Saluda
         run: echo "Hola a todos"
+        if: ${{ github.ref }}
