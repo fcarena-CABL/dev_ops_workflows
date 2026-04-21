@@ -31,6 +31,9 @@ jobs:
         run: echo ${{ github.actor }}
       - name: Retornar Ref - Repository - Issues title
         run: echo ${{ github.ref }} - ${{ github.repository }} - ${{ github.event.issue.title }}
+      - id: obtener_version
+        run: echo 'version=1.0.0' >> $GITHUB_OUTPUT
+      - run: echo ${{ steps.obtener_version.outputs.version }}
   mayor:
     if: ${{ inputs.edad >= 18 }}
     runs-on: ubuntu-latest
@@ -44,7 +47,7 @@ jobs:
       - name: Retornar Ref - Repository - Issues title
         run: echo ${{ github.ref }} - ${{ github.repository }} - ${{ github.event.issue.title }}
   menor:
-    if: ${{ inputs.edad < 18 && inputs.edad >= 0}}
+    if: ${{ inputs.edad < 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Corre script menor
