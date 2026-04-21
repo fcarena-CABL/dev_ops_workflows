@@ -32,7 +32,7 @@ jobs:
       - name: Retornar Ref - Repository - Issues title
         run: echo ${{ github.ref }} - ${{ github.repository }} - ${{ github.event.issue.title }}
   mayor:
-    if: ${{ inputs.edad >= 18 }}
+    if: ${{ inputs.edad >= 18 && inputs.edad <= 0}}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
