@@ -11,6 +11,8 @@ on:
         required: true
         default: 'Valor default'
         type: string
+  push: 
+    branches: ["main"]
 jobs:
   mayor:
     if: ${{ inputs.edad >= 18 }}
@@ -18,7 +20,7 @@ jobs:
     steps:
       - name: Correr script
         run: echo ${{ inputs.nombre }} es mayor de edad
-  menos:
+  menor:
     if: ${{ inputs.edad < 18 }}
     runs-on: ubuntu-latest
     steps:
