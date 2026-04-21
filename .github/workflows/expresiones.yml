@@ -46,6 +46,8 @@ jobs:
         run: echo "Ambiente ${{ env.AMBIENTE }} ${{ env.REGION }}"
       - name: Mostrar variables de entorno
         run: echo " Home - ${{ env.MODE_ENV }}"
+      - name: Mostrar variables secret
+        run: echo "Secret - ${{ secrets.password }}"
   mayor:
     if: ${{ inputs.edad >= 18 }}
     runs-on: ubuntu-latest
